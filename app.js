@@ -42,7 +42,8 @@ const applePayCert = fs.readFileSync(APPLE_PAY_CERTIFICATE_PATH);
 */
 const app = express();
 app.use(express.static('public'));
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
 
 
 /**
