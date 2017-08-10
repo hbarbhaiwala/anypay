@@ -24,6 +24,8 @@ const SSL_KEY_PATH = "./certificates/key.pem";
 const MERCHANT_IDENTIFIER = "merchant.com.example";
 const MERCHANT_DOMAIN = "example.com";
 
+/**
+@hbarbhaiwala: commenting out this code to make sure we can access the index.html page
 try {
   fs.accessSync(APPLE_PAY_CERTIFICATE_PATH);
   fs.accessSync(SSL_CERTIFICATE_PATH);
@@ -31,6 +33,7 @@ try {
 } catch (e) {
   throw new Error('You must generate your SSL and Apple Pay certificates before running this example.');
 }
+**/
 
 const sslKey = fs.readFileSync(SSL_KEY_PATH);
 const sslCert = fs.readFileSync(SSL_CERTIFICATE_PATH);
