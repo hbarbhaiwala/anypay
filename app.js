@@ -9,8 +9,6 @@ the Apple Pay merchant session from Apple's servers.
 
 var express = require('express');
 var bodyParser = require("body-parser");
-var app = express();
-
 var https = require("https");
 var request = require("request");
 
