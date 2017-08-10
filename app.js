@@ -7,11 +7,12 @@ Sets up a simple Express HTTP server to host the example page, and handles reque
 the Apple Pay merchant session from Apple's servers.
 */
 
-import express from 'express';
-import bodyParser from 'body-parser';
-import fs from 'fs';
-import https from 'https';
-import request from 'request';
+var express = require('express');
+var bodyParser = require("body-parser");
+var app = express();
+
+var https = require("https");
+var request = require("request");
 
 /**
 * IMPORTANT
