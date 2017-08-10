@@ -33,11 +33,11 @@ try {
 } catch (e) {
   throw new Error('You must generate your SSL and Apple Pay certificates before running this example.');
 }
-**/
 
 const sslKey = fs.readFileSync(SSL_KEY_PATH);
 const sslCert = fs.readFileSync(SSL_CERTIFICATE_PATH);
 const applePayCert = fs.readFileSync(APPLE_PAY_CERTIFICATE_PATH);
+**/
 
 /**
 * Set up our server and static page hosting
@@ -92,7 +92,10 @@ app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
 });
 
+/**
 https.createServer({
 	key: sslKey,
 	cert: sslCert,
 }, app).listen(443);
+
+*/
