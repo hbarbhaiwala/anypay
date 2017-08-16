@@ -1,0 +1,22 @@
+doctype
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title #{title} - My Site
+    link(rel='stylesheet', href='/css/style2.css')
+    script(src='js/index.js')
+    script(src='js/support.js')
+  body
+    header
+      h1 My Site
+    .container
+      .apple-pay
+        block content
+        block applePayButton
+          p
+            | Compatible browsers will display an Apple&nbsp;Pay button below.
+        .apple-pay-button(onclick='applePayButtonClicked()')
+
+    footer
+      p Running on node with Express, Jade
