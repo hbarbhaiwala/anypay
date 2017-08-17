@@ -75,7 +75,7 @@ function applePayButtonClicked() {
 
 		supportedNetworks:[ 'amex', 'discover', 'masterCard', 'visa'],
 		merchantCapabilities: [ 'supports3DS' ],
-
+		requiredBillingContactFields: [ 'postalAddress'	]
 		//requiredShippingContactFields: [ 'postalAddress', 'email' ],
 	};
 
