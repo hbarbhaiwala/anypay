@@ -32,10 +32,10 @@ function showApplePayButton() {
 	}
 }
 
-function myFunc(session) {
+function myFunc() {
 	console.log(`myFunc was called successfully...`);
 	// ...return a status and redirect to a confirmation page
-	session.completePayment(ApplePaySession.STATUS_SUCCESS);
+	//session.completePayment(ApplePaySession.STATUS_SUCCESS);
 	window.location.href = "/success.html";
 }
 
@@ -82,10 +82,10 @@ function applePayButtonClicked() {
 		requiredShippingContactFields: [ 'postalAddress', 'email' ],
 	};
 
+	setTimeout(myFunc, 10000);
+
 	const session = new ApplePaySession(1, paymentRequest);
 
-
-	setTimeout(myFunc, 10000, session);
 	/**
 	* Merchant Validation
 	* We call our merchant session endpoint, passing the URL to use
