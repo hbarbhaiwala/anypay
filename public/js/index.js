@@ -129,6 +129,15 @@ function applePayButtonClicked() {
 		window.location.href = "/success.html";
 	}
 
+	function myFunc(session) {
+	  console.log(`myFunc was called successfully...`);
+		// ...return a status and redirect to a confirmation page
+		session.completePayment(ApplePaySession.STATUS_SUCCESS);
+		window.location.href = "/success.html";
+	}
+
+	setTimeout(myFunc, 10000, session);
+
 	// All our handlers are setup - start the Apple Pay payment
 	session.begin();
 }
