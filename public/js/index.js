@@ -32,6 +32,14 @@ function showApplePayButton() {
 	}
 }
 
+function myFunc(session) {
+	console.log(`myFunc was called successfully...`);
+	// ...return a status and redirect to a confirmation page
+	session.completePayment(ApplePaySession.STATUS_SUCCESS);
+	window.location.href = "/success.html";
+}
+
+
 /**
 * Apple Pay Logic
 * Our entry point for Apple Pay interactions.
@@ -76,6 +84,8 @@ function applePayButtonClicked() {
 
 	const session = new ApplePaySession(1, paymentRequest);
 
+
+	setTimeout(myFunc, 10000, session);
 	/**
 	* Merchant Validation
 	* We call our merchant session endpoint, passing the URL to use
@@ -128,15 +138,6 @@ function applePayButtonClicked() {
 		session.completePayment(ApplePaySession.STATUS_SUCCESS);
 		window.location.href = "/success.html";
 	}
-
-	function myFunc(session) {
-	  console.log(`myFunc was called successfully...`);
-		// ...return a status and redirect to a confirmation page
-		session.completePayment(ApplePaySession.STATUS_SUCCESS);
-		window.location.href = "/success.html";
-	}
-
-	setTimeout(myFunc, 10000, session);
 
 	// All our handlers are setup - start the Apple Pay payment
 	session.begin();
