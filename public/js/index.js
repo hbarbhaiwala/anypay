@@ -32,8 +32,8 @@ function showApplePayButton() {
 	}
 }
 
-function myFunc() {
-	console.log(`myFunc was called successfully...`);
+function hackShowSuccess() {
+	console.log(`hackShowSuccess was called successfully...`);
 	// ...return a status and redirect to a confirmation page
 	//session.completePayment(ApplePaySession.STATUS_SUCCESS);
 	window.location.href = "/success.html";
@@ -48,41 +48,38 @@ function myFunc() {
 function applePayButtonClicked() {
 	const paymentRequest = {
 		countryCode: 'US',
-		currencyCode: 'USD',
-		shippingMethods: [
-			{
-				label: 'Free Shipping',
-				amount: '0.00',
-				identifier: 'free',
-				detail: 'Delivers in five business days',
-			},
-			{
-				label: 'Express Shipping',
-				amount: '5.00',
-				identifier: 'express',
-				detail: 'Delivers in two business days',
-			},
-		],
-
+		currencyCode: 'USD',		// data
+		// shippingMethods: [
+		// 	{
+		// 		label: 'Free Shipping',
+		// 		amount: '0.00',
+		// 		identifier: 'free',
+		// 		detail: 'Delivers in five business days',
+		// 	},
+		// ],
 		lineItems: [
 			{
-				label: 'Shipping',
-				amount: '0.00',
+				label: 'SUB-TOTAL',
+				amount: '0.00',			// data
+			},
+			{
+				label: 'TAXES & FEES',
+				amount: '0.00',			// data
 			}
 		],
 
 		total: {
-			label: 'Apple Pay Example',
-			amount: '8.99',
+			label: 'Expedia', 	// data
+			amount: '8.99',			// data
 		},
 
 		supportedNetworks:[ 'amex', 'discover', 'masterCard', 'visa'],
 		merchantCapabilities: [ 'supports3DS' ],
 
-		requiredShippingContactFields: [ 'postalAddress', 'email' ],
+		//requiredShippingContactFields: [ 'postalAddress', 'email' ],
 	};
 
-	setTimeout(myFunc, 10000);
+	setTimeout(hackShowSuccess, 3000);
 
 	const session = new ApplePaySession(1, paymentRequest);
 
