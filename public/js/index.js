@@ -15,15 +15,14 @@ The main client-side JS. Handles displaying the Apple Pay button and requesting 
 * If we wanted more fine-grained control, we could use
 * ApplePaySession.canMakePaymentsWithActiveCards() instead.
 */
-/*
 document.addEventListener('DOMContentLoaded', () => {
+	console.log("DOM content loaded...");
 	if (window.ApplePaySession) {
 		if (ApplePaySession.canMakePayments) {
 			showApplePayButton();
 		}
 	}
 });
-*/
 
 function showApplePayButton() {
 	HTMLCollection.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
@@ -32,7 +31,6 @@ function showApplePayButton() {
 		button.className += " visible";
 	}
 }
-
 
 /**
 * Apple Pay Logic
