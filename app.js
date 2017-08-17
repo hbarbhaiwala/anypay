@@ -9,6 +9,7 @@ made in Voyager, helps stub out Apple Pay merchant session from Apple's servers.
 
 var express = require('express');
 var querystring = require('querystring');
+var mongoHelper = require('./lib/mongoHelper.js');
 
 /**
 * Set up our server and static page hosting
@@ -30,12 +31,36 @@ app.get('/charge', function (req, res) {
     if (req.url.indexOf('?') >= 0) {
       queryParams = querystring.parse(req.url.replace(/^.*\?/, ''));
     }
-    var q = querystring.parse(queryParams);
+    //console.log('query params: ' + queryParams);
+
+    var title = 'Home';
+    if(queryParams!=undefined && queryParams.title!=undefined) {
+      title = queryParams.title
+    }
 
     res.render('charge', {
-      title : queryParams.title || 'Home',
-      year : queryParams.year
+      title : title,
+      year : '2017'
     })
+});
+
+app.post('/mongodbTest', function (req, res) {
+    console.log("POST:mongodbTest");
+
+    mongoHelper.foo();
+    mongoHelper.createDatabase();
+    mongoHelper.createCollection();
+
+    mongoHelper.insert("Husain");
+    mongoHelper.insert("Husain2");
+
+    var query = { name: "Husain2" };
+    mongoHelper.find(query);
+    mongoHelper.update(query, { name: query.name, address: '123' });
+    var query2 = { name: "Husain2" };
+    mongoHelper.find(query2);
+
+    res.send("sucess");
 });
 
 /**
