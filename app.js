@@ -56,11 +56,10 @@ app.post('/mongodbTest', function (req, res) {
 
     var query = { name: "Husain2" };
     mongoHelper.find(query);
-    mongoHelper.update(query, { name: query.name, address: '123' });
-    var query2 = { name: "Husain2" };
-    mongoHelper.find(query2);
+    mongoHelper.update(query, { name: query.name, address: Date.now() });
 
-    res.send("sucess");
+    mongoHelper.find(query);
+    res.send('success');
 });
 
 /**
