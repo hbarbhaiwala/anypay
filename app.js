@@ -47,6 +47,7 @@ app.get('/bookorchange', function (req, res) {
     console.log("GET:bookorchange");
 
     var data = {
+      brandName: "hotels.com",
       hotelName : 'Fiesta Rancho Hotel',
       roomDescription: 'Standard Boring Room',
       cancellationInfo: 'Cancellation IMPOSSIBLE',
@@ -71,7 +72,8 @@ app.post('/applepaydata', function (req, res) {
     }
 
     var data = {
-      hotelName : queryParams.hotelName,
+      brandName: queryParams.brandName,
+      hotelName: queryParams.hotelName,
       roomDescription: queryParams.roomDescription,
       cancellationInfo: queryParams.cancellationInfo,
       checkInDate: queryParams.checkInDate,
