@@ -1,0 +1,169 @@
+doctype html
+html
+  head
+    style.
+      body {
+      background: rgb(232,234,237);
+      color: black;
+      }
+      .border-edges-top {
+      border-radius: 15px 15px 0px 0px;
+      margin-bottom: 1%;
+      }
+      .border-edges-bottom {
+      border-radius: 0px 0px 15px 15px;
+      margin-top: 1%;
+      }
+      .border-edges-bottom-right {
+      border-radius: 0px 0px 15px 0px;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      }
+      .border-edges-bottom-left {
+      border-radius: 0px 0px 0px 15px;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      }
+      .border-edges-all {
+      border-radius: 15px 15px 15px 15px;
+      }
+      .blueTerms {
+      color: blue;
+      display: inline;
+      }
+      .brandBar {
+      height: 60px;
+      background: rgb(212,18,0);
+      color: rgb(252,252,252);
+      display: block;
+      margin: 0 auto;
+      }
+      .cancellationInfo {
+      border-radius: 0px 0px 0px 15px;
+      color: rgb(152,0,109);
+      }
+      .chargeInfoAndButtonSection {
+      padding: 10px;
+      height: 40px;
+      background: black;
+      color: rgb(247,247,247);
+      }
+      .checkInOutLabels {
+      text-align: left;
+      float: left;
+      width: 27%;
+      margin-right: 5px;
+      padding-left: 25px;
+      }
+      .checkInOutData {
+      margin-left: 5px;
+      text-align: left;
+      float: left;
+      width: 45%;
+      }
+      .container {
+      padding: 5px;
+      }
+      .grey-text {
+      color: rgb(89,89,89);
+      }
+      .module-section {
+      background: rgb(247,247,247);
+      padding: 10px;
+      height: auto;
+      }
+      .payNowInfoSection {
+      padding: 4px;
+      float: left;
+      margin-right: 10px;
+      }
+      .propertyInfo {
+      border-radius: 15px 15px 0px 0px;
+      margin-top: 10px;
+      }
+      .travelDatesAndTripTotalSection {
+      width: 100%;
+      margin-bottom: 74px;
+      }
+      .travelDateSection {
+      width: 56%;
+      float: left;
+      }
+      .travelerInfoSection {
+      clear: both;
+      margin-top: 30px;
+      }
+      .termsAndConditions {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-right: 10px;
+      }
+      .totalPrice {
+      font-size: medium;
+      }
+      .tripTotalSection {
+      width:34%;
+      float: right;
+      border-left-style: solid;
+      border-left-color: rgb(232,234,237);
+      margin-left: 2px;
+      text-align: center;
+      padding-right: 10px;
+      }
+      .submitButton {
+      float: left;
+      }
+  body
+    .container
+      .brandBar Hotels.com
+      |     
+      div
+        .module-section.border-edges-top.propertyInfo
+          div(style='font-size:large') #{hotelName}
+          |             
+          .grey-text #{roomDescription}
+        |         
+        .module-section.cancellationInfoSection
+          .cancellationInfo #{cancellationInfo}
+        |         
+        .travelDatesAndTripTotalSection
+          .module-section.border-edges-bottom-left.travelDateSection
+            .checkInOutLabels.grey-text
+              .checkInLabel Check-in
+              |                     
+              .checkOutLabel Check-out
+            |                 
+            .checkInOutData
+              .checkInDate #{checkInDate}
+              |                     
+              .checkInDate #{checkOutDate}
+          |             
+          .module-section.border-edges-bottom-right.tripTotalSection
+            .totalInfo Trip Total
+            |                 
+            .total(style='font-size:large') #{totalPrice}
+        |         
+        |         
+        .module-section.border-edges-all.travelerInfoSection
+          .brandIcon
+          |             
+          .travelerInfo
+            .travelerName(style='font-size:large') #{travelerName}
+            |               
+            .phoneNumber #{travelerPhone}
+            |               
+            .email #{travelerEmail}
+        |         
+        .termsAndConditions.grey-text
+          | By completing this booking I agree that I have read and accept the
+          p.blueTerms Terms and Conditions
+          |  and 
+          p.blueTerms Privacy Policy.
+      |     
+      .chargeInfoAndButtonSection
+        .payNowInfoSection
+          div Total to pay now
+          |             
+          .totalPrice(style='font-size:large') #{totalPrice}
+        |         
+        .submitButton []

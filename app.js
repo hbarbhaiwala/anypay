@@ -31,7 +31,6 @@ app.get('/charge', function (req, res) {
     if (req.url.indexOf('?') >= 0) {
       queryParams = querystring.parse(req.url.replace(/^.*\?/, ''));
     }
-    //console.log('query params: ' + queryParams);
 
     var title = 'Home';
     if(queryParams!=undefined && queryParams.title!=undefined) {
@@ -42,6 +41,50 @@ app.get('/charge', function (req, res) {
       title : title,
       year : '2017'
     })
+});
+
+app.get('/bookorchange', function (req, res) {
+    console.log("GET:bookorchange");
+
+    var data = {
+      hotelName : 'Fiesta Rancho Hotel',
+      roomDescription: 'Standard Boring Room',
+      cancellationInfo: 'Cancellation IMPOSSIBLE',
+      checkInDate: 'tomorrow',
+      checkOutDate: 'today',
+      totalPrice: '$FREE',
+      travelerName: 'Me',
+      travelerPhone: '007',
+      travelerEmail: 'iamBOND@bondmail.com',
+    }
+
+    res.render('bookorchange', data)
+});
+
+app.post('/applepaydata', function (req, res) {
+    console.log("POST:applepaydata");
+
+    // get query params as object
+    var queryParams;
+    if (req.url.indexOf('?') >= 0) {
+      queryParams = querystring.parse(req.url.replace(/^.*\?/, ''));
+    }
+
+    var data = {
+      hotelName : queryParams.hotelName,
+      roomDescription: queryParams.roomDescription,
+      cancellationInfo: queryParams.cancellationInfo,
+      checkInDate: queryParams.checkInDate,
+      checkOutDate: queryParams.checkOutDate,
+      totalPrice: queryParams.totalPrice,
+      travelerName: queryParams.travelerName,
+      travelerPhone: queryParams.travelerPhone,
+      travelerEmail: queryParams.travelerEmail
+    }
+
+    mongoHelper.insert(data, res, function(result, res) {
+      res.send(result.insertedId);
+    });
 });
 
 app.post('/mongodbTest', function (req, res) {
@@ -58,8 +101,9 @@ app.post('/mongodbTest', function (req, res) {
     mongoHelper.find(query);
     mongoHelper.update(query, { name: query.name, address: Date.now() });
 
-    mongoHelper.find(query);
-    res.send('success');
+    mongoHelper.find(query, res, function(result, res) {
+      res.send(result._id);
+    });
 });
 
 /**
