@@ -45,21 +45,30 @@ app.get('/charge', function (req, res) {
 
 app.get('/bookorchange', function (req, res) {
     console.log("GET:bookorchange");
-
-    var data = {
-      brandName: "hotels.com",
-      hotelName : 'Fiesta Rancho Hotel',
-      roomDescription: 'Standard Boring Room',
-      cancellationInfo: 'Cancellation IMPOSSIBLE',
-      checkInDate: 'tomorrow',
-      checkOutDate: 'today',
-      totalPrice: '$FREE',
-      travelerName: 'Me',
-      travelerPhone: '007',
-      travelerEmail: 'iamBOND@bondmail.com',
+    // get query params as object
+    var queryParams;
+    if (req.url.indexOf('?') >= 0) {
+      queryParams = querystring.parse(req.url.replace(/^.*\?/, ''));
     }
 
-    res.render('bookorchange', data)
+    var ObjectId = require('mongodb').ObjectId
+    var query = { _id: ObjectId(queryParams.id) };
+    mongoHelper.find(query, res, function(result, res) {
+      res.render('bookorchange', result);
+    });
+
+    // var data = {
+    //   brandName: "hotels.com",
+    //   hotelName : 'Fiesta Rancho Hotel',
+    //   roomDescription: 'Standard Boring Room',
+    //   cancellationInfo: 'Cancellation IMPOSSIBLE',
+    //   checkInDate: 'tomorrow',
+    //   checkOutDate: 'today',
+    //   totalPrice: '$FREE',
+    //   travelerName: 'Me',
+    //   travelerPhone: '007',
+    //   travelerEmail: 'iamBOND@bondmail.com',
+    // }
 });
 
 app.post('/applepaydata', function (req, res) {
