@@ -9,24 +9,24 @@ html
       .brandBar(class="brandBar-#{brandName}")
       |     
       div
-        .thankYou Thanks Autumn, your reservation is confirmed!
+        .thankYou Thanks #{travelerName}, your reservation is confirmed!
         |     &#x9;
         .textConfirm
           | We&apos;ve emailed your confirmation to 
-          p.travelerPlaceHolder apples4everyone@gmail.com
+          p.travelerPlaceHolder #{travelerEmail}
           | . Enjoy your stay!
         |         
-        .confirmationNum Confirmation number: 803482081822
+        .confirmationNum Confirmation number: BOOKING_NUMBER
         |         
         .module-section.border-edges-top.propertyInfo
-          div(style='font-size:large') Appleview River Resort
+          div(style='font-size:large') #{hotelName}
           |             
           .grey-text 460 Lonesome Valley, Pigeon Forge, TN, 37862
           |             
-          .grey-text Standard Room, 1 Queen Bed
+          .grey-text #{roomDescription}
         |         
         .module-section.cancellationInfoSection
-          .cancellationInfo(class="cancellationInfo-#{brandName}") Free Cancellation by Sep 22, 10:00 PM
+          .cancellationInfo(class="cancellationInfo-#{brandName}") #{cancellationInfo}
         |         
         .travelDatesAndTripTotalSection
           .module-section.border-edges-bottom-left.travelDateSection
@@ -36,11 +36,11 @@ html
               .checkOutLabel Check-out
             |                 
             .checkInOutData
-              .checkInDate Tue, Sep 26
+              .checkInDate #{checkInDate}
               |                     
-              .checkInDate Mon, Sep 25
+              .checkInDate #{checkOutDate}
           |             
           .module-section.border-edges-bottom-right.tripTotalSection
             .totalInfo Trip Total
             |                 
-            .total(style='font-size:large') $66.03
+            .total(style='font-size:large') #{totalPrice}
