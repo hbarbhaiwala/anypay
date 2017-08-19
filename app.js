@@ -136,6 +136,14 @@ app.get('/test', function (req, res) {
 });
 
 /**
+* Handle 404
+*/
+  app.use(function(req, res) {
+      res.status(400);
+     res.render('404.jade', {title: '404: Oops, have not found gold yet!!!'});
+  });
+
+/**
 * Start serving the app.
 */
 app.listen(app.get('port'), function() {
