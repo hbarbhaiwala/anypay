@@ -32,11 +32,11 @@ function showApplePayButton() {
 	}
 }
 
-function hackShowSuccess() {
-	console.log(`hackShowSuccess was called successfully...`);
+function hackShowSuccess(tokenId) {
+	console.log(`hackShowSuccess was called successfully...` + tokenId);
 	// ...return a status and redirect to a confirmation page
 	//session.completePayment(ApplePaySession.STATUS_SUCCESS);
-	window.location.href = "/success.html";
+	window.location.href = '/success?id=' + tokenId;
 }
 
 
@@ -45,7 +45,7 @@ function hackShowSuccess() {
 * Our entry point for Apple Pay interactions.
 * Triggered when the Apple Pay button is pressed
 */
-function applePayButtonClicked() {
+function applePayButtonClicked(tokenId) {
 	const paymentRequest = {
 		countryCode: 'US',
 		currencyCode: 'USD',		// data
@@ -79,7 +79,7 @@ function applePayButtonClicked() {
 		//requiredShippingContactFields: [ 'postalAddress', 'email' ],
 	};
 
-	setTimeout(hackShowSuccess, 3000);
+	setTimeout(hackShowSuccess(tokenId), 3000);
 
 	const session = new ApplePaySession(1, paymentRequest);
 

@@ -43,7 +43,23 @@ app.get('/charge', function (req, res) {
     })
 });
 
+/**
+* A GET to render the success page post the payment.
+*/
+app.get('/success', function (req, res) {
+    console.log("GET:success");
+    // get query params as object
+    var queryParams;
+    if (req.url.indexOf('?') >= 0) {
+      queryParams = querystring.parse(req.url.replace(/^.*\?/, ''));
+    }
 
+    res.render('success', {})
+});
+
+/**
+* A GET to render the trip recap.
+*/
 app.get('/bookorchange', function (req, res) {
     console.log("GET:bookorchange");
     // get query params as object
