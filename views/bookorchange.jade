@@ -8,6 +8,7 @@ html
     script(src='./js/index.js')
     script(src='./js/support.js')
   body
+    input(type="hidden" id="tokenId" value="#{tokenId}")
     .container
       .brandBar(class="brandBar-#{brandName}")
       |     
@@ -61,7 +62,7 @@ html
           .totalPrice(style='font-size:large') #{totalPrice}
         |         
         .submitButton
-          .apple-pay-button-with-text.apple-pay-button-white-with-text(onclick='applePayButtonClicked()')
+          .apple-pay-button-with-text.apple-pay-button-white-with-text(onclick='applePayButtonClicked(getTokenId())')
             span.text Buy with
               |   
               span.logo

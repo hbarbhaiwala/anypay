@@ -10,6 +10,7 @@ made in Voyager, helps stub out Apple Pay merchant session from Apple's servers.
 var express = require('express');
 var querystring = require('querystring');
 var mongoHelper = require('./lib/mongoHelper.js');
+var ObjectId = require('mongodb').ObjectId;
 
 /**
 * Set up our server and static page hosting
@@ -54,7 +55,10 @@ app.get('/success', function (req, res) {
       queryParams = querystring.parse(req.url.replace(/^.*\?/, ''));
     }
 
-    res.render('success', {})
+    var query = { _id: ObjectId(queryParams.id) };
+    mongoHelper.find(query, res, function(result, res) {
+      res.render('success', result);
+    });
 });
 
 /**
@@ -68,9 +72,9 @@ app.get('/bookorchange', function (req, res) {
       queryParams = querystring.parse(req.url.replace(/^.*\?/, ''));
     }
 
-    var ObjectId = require('mongodb').ObjectId
     var query = { _id: ObjectId(queryParams.id) };
     mongoHelper.find(query, res, function(result, res) {
+      result.tokenId = result._id;
       res.render('bookorchange', result);
     });
 });

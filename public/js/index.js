@@ -33,12 +33,16 @@ function showApplePayButton() {
 }
 
 function hackShowSuccess(tokenId) {
-	console.log(`hackShowSuccess was called successfully...` + tokenId);
+	console.log(`hackShowSuccess was called successfully...`);
 	// ...return a status and redirect to a confirmation page
 	//session.completePayment(ApplePaySession.STATUS_SUCCESS);
 	window.location.href = '/success?id=' + tokenId;
 }
 
+function getTokenId() {
+	console.log(`getTokenId was called successfully...`);
+	return document.getElementById('tokenId').value;
+}
 
 /**
 * Apple Pay Logic
