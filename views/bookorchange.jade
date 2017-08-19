@@ -35,10 +35,15 @@ html
       }
       .brandBar {
       height: 60px;
-      background: rgb(212,18,0);
       color: rgb(252,252,252);
       display: block;
       margin: 0 auto;
+      }
+      .hotelscom {
+        background: rgb(212,18,0);
+      }
+      .expedia {
+        background: rgb(255,255,255);
       }
       .cancellationInfo {
       border-radius: 0px 0px 0px 15px;
@@ -117,7 +122,7 @@ html
       }
   body
     .container
-      .brandBar Hotels.com
+      .brandBar(class="#{brandName}")
       |     
       div
         .module-section.border-edges-top.propertyInfo
