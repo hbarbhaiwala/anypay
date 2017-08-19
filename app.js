@@ -124,6 +124,14 @@ app.post('/mongodbTest', function (req, res) {
 });
 
 /**
+* A GET to render and test other pages
+*/
+app.get('/test', function (req, res) {
+    console.log("GET:test");
+    res.render('test')
+});
+
+/**
 * Start serving the app.
 */
 app.listen(app.get('port'), function() {
