@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function showApplePayButton() {
 	HTMLCollection.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
-	const buttons = document.getElementsByClassName("apple-pay-button");
+	const buttons = document.getElementsByClassName("apple-pay-button");	// FIXME
 	for (let button of buttons) {
 		button.className += " visible";
 	}
