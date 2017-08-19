@@ -1,0 +1,77 @@
+[1mdiff --git a/app.js b/app.js[m
+[1mindex 09d0068..5b4a936 100644[m
+[1m--- a/app.js[m
+[1m+++ b/app.js[m
+[36m@@ -21,8 +21,8 @@[m [mapp.use(express.static(__dirname + '/public'));[m
+ app.set('view engine', 'jade');[m
+ [m
+ /**[m
+[1;31m-* A GET to obtain  the landing page in the event the agent needs to perform a charge[m
+[1;31m-* in Voyager using Apple Pay.[m
+[1;32m+[m[1;32m* A GET to obtain the landing page in the event the agent needs to perform a[m
+[1;32m+[m[1;32m* charge in Voyager using Apple Pay.[m
+ */[m
+ app.get('/charge', function (req, res) {[m
+     console.log("GET:charge");[m
+[36m@@ -43,6 +43,7 @@[m [mapp.get('/charge', function (req, res) {[m
+     })[m
+ });[m
+ [m
+[1;32m+[m
+ app.get('/bookorchange', function (req, res) {[m
+     console.log("GET:bookorchange");[m
+     // get query params as object[m
+[36m@@ -56,24 +57,13 @@[m [mapp.get('/bookorchange', function (req, res) {[m
+     mongoHelper.find(query, res, function(result, res) {[m
+       res.render('bookorchange', result);[m
+     });[m
+[1;31m-[m
+[1;31m-    // var data = {[m
+[1;31m-    //   brandName: "hotels.com",[m
+[1;31m-    //   hotelName : 'Fiesta Rancho Hotel',[m
+[1;31m-    //   roomDescription: 'Standard Boring Room',[m
+[1;31m-    //   cancellationInfo: 'Cancellation IMPOSSIBLE',[m
+[1;31m-    //   checkInDate: 'tomorrow',[m
+[1;31m-    //   checkOutDate: 'today',[m
+[1;31m-    //   totalPrice: '$FREE',[m
+[1;31m-    //   travelerName: 'Me',[m
+[1;31m-    //   travelerPhone: '007',[m
+[1;31m-    //   travelerEmail: 'iamBOND@bondmail.com',[m
+[1;31m-    // }[m
+ });[m
+ [m
+[1;32m+[m[1;32m/**[m
+[1;32m+[m[1;32m* A POST to push the data to a database and return the id for the payload.[m
+[1;32m+[m[1;32m*/[m
+ app.post('/applepaydata', function (req, res) {[m
+     console.log("POST:applepaydata");[m
+[1;31m-[m
+     // get query params as object[m
+     var queryParams;[m
+     if (req.url.indexOf('?') >= 0) {[m
+[1mdiff --git a/views/bookorchange.jade b/views/bookorchange.jade[m
+[1mindex f505230..0e44e9a 100644[m
+[1m--- a/views/bookorchange.jade[m
+[1m+++ b/views/bookorchange.jade[m
+[36m@@ -1,6 +1,7 @@[m
+ doctype html[m
+ html[m
+   head[m
+[1;32m+[m[1;32m    meta(name='viewport', content='width=device-width, initial-scale=1', shrink-to-fit='no')[m
+     style.[m
+       body {[m
+       background: rgb(232,234,237);[m
+[1mdiff --git a/views/layout.jade b/views/layout.jade[m
+[1mindex d9f4db7..64e4e5f 100644[m
+[1m--- a/views/layout.jade[m
+[1m+++ b/views/layout.jade[m
+[36m@@ -1,8 +1,7 @@[m
+ doctype[m
+ html[m
+   head[m
+[1;31m-    meta(charset='UTF-8')[m
+[1;31m-    meta(name='viewport', content='width=device-width, initial-scale=1')[m
+[1;32m+[m[1;32m    meta(name='viewport', content='width=device-width, initial-scale=1', shrink-to-fit='no')[m
+     title #{title} - My Site[m
+     link(rel='stylesheet', href='/css/style2.css')[m
+     script(src='./js/index.js')[m

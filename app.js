@@ -21,8 +21,8 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'jade');
 
 /**
-* A GET to obtain  the landing page in the event the agent needs to perform a charge
-* in Voyager using Apple Pay.
+* A GET to obtain the landing page in the event the agent needs to perform a
+* charge in Voyager using Apple Pay.
 */
 app.get('/charge', function (req, res) {
     console.log("GET:charge");
@@ -43,6 +43,7 @@ app.get('/charge', function (req, res) {
     })
 });
 
+
 app.get('/bookorchange', function (req, res) {
     console.log("GET:bookorchange");
     // get query params as object
@@ -56,24 +57,13 @@ app.get('/bookorchange', function (req, res) {
     mongoHelper.find(query, res, function(result, res) {
       res.render('bookorchange', result);
     });
-
-    // var data = {
-    //   brandName: "hotels.com",
-    //   hotelName : 'Fiesta Rancho Hotel',
-    //   roomDescription: 'Standard Boring Room',
-    //   cancellationInfo: 'Cancellation IMPOSSIBLE',
-    //   checkInDate: 'tomorrow',
-    //   checkOutDate: 'today',
-    //   totalPrice: '$FREE',
-    //   travelerName: 'Me',
-    //   travelerPhone: '007',
-    //   travelerEmail: 'iamBOND@bondmail.com',
-    // }
 });
 
+/**
+* A POST to push the data to a database and return the id for the payload.
+*/
 app.post('/applepaydata', function (req, res) {
     console.log("POST:applepaydata");
-
     // get query params as object
     var queryParams;
     if (req.url.indexOf('?') >= 0) {
