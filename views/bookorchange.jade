@@ -3,126 +3,12 @@ html
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1', shrink-to-fit='no')
-    style.
-      body {
-      background: rgb(232,234,237);
-      color: black;
-      }
-      .border-edges-top {
-      border-radius: 15px 15px 0px 0px;
-      margin-bottom: 1%;
-      }
-      .border-edges-bottom {
-      border-radius: 0px 0px 15px 15px;
-      margin-top: 1%;
-      }
-      .border-edges-bottom-right {
-      border-radius: 0px 0px 15px 0px;
-      margin-top: 1%;
-      margin-bottom: 1%;
-      }
-      .border-edges-bottom-left {
-      border-radius: 0px 0px 0px 15px;
-      margin-top: 1%;
-      margin-bottom: 1%;
-      }
-      .border-edges-all {
-      border-radius: 15px 15px 15px 15px;
-      }
-      .blueTerms {
-      color: blue;
-      display: inline;
-      }
-      .brandBar {
-      height: 60px;
-      color: rgb(252,252,252);
-      display: block;
-      margin: 0 auto;
-      }
-      .hotelscom {
-        background: rgb(212,18,0);
-      }
-      .expedia {
-        background: rgb(255,255,255);
-      }
-      .cancellationInfo {
-      border-radius: 0px 0px 0px 15px;
-      color: rgb(152,0,109);
-      }
-      .chargeInfoAndButtonSection {
-      padding: 10px;
-      height: 40px;
-      background: black;
-      color: rgb(247,247,247);
-      }
-      .checkInOutLabels {
-      text-align: left;
-      float: left;
-      width: 27%;
-      margin-right: 5px;
-      padding-left: 25px;
-      }
-      .checkInOutData {
-      margin-left: 5px;
-      text-align: left;
-      float: left;
-      width: 45%;
-      }
-      .container {
-      padding: 5px;
-      }
-      .grey-text {
-      color: rgb(89,89,89);
-      }
-      .module-section {
-      background: rgb(247,247,247);
-      padding: 10px;
-      height: auto;
-      }
-      .payNowInfoSection {
-      padding: 4px;
-      float: left;
-      margin-right: 10px;
-      }
-      .propertyInfo {
-      border-radius: 15px 15px 0px 0px;
-      margin-top: 10px;
-      }
-      .travelDatesAndTripTotalSection {
-      width: 100%;
-      margin-bottom: 74px;
-      }
-      .travelDateSection {
-      width: 56%;
-      float: left;
-      }
-      .travelerInfoSection {
-      clear: both;
-      margin-top: 30px;
-      }
-      .termsAndConditions {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding-right: 10px;
-      }
-      .totalPrice {
-      font-size: medium;
-      }
-      .tripTotalSection {
-      width:34%;
-      float: right;
-      border-left-style: solid;
-      border-left-color: rgb(232,234,237);
-      margin-left: 2px;
-      text-align: center;
-      padding-right: 10px;
-      }
-      .submitButton {
-      float: left;
-      }
+    link(rel='stylesheet', href='./css/style.css')
+    script(src='./js/index.js')
+    script(src='./js/support.js')
   body
     .container
-      .brandBar(class="#{brandName}")
+      .brandBar(class="brandBar-#{brandName}")
       |     
       div
         .module-section.border-edges-top.propertyInfo
@@ -131,7 +17,7 @@ html
           .grey-text #{roomDescription}
         |         
         .module-section.cancellationInfoSection
-          .cancellationInfo #{cancellationInfo}
+          .cancellationInfo(class="cancellationInfo-#{brandName}") #{cancellationInfo}
         |         
         .travelDatesAndTripTotalSection
           .module-section.border-edges-bottom-left.travelDateSection

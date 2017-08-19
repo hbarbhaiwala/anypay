@@ -1,0 +1,143 @@
+body {
+	background: rgb(232,234,237);
+    color: black;
+}
+.border-edges-top {
+	border-radius: 15px 15px 0px 0px;
+    margin-bottom: 1%;
+}
+.border-edges-bottom {
+	border-radius: 0px 0px 15px 15px;
+    margin-top: 1%;
+}
+.border-edges-bottom-right {
+	border-radius: 0px 0px 15px 0px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.border-edges-bottom-left {
+	border-radius: 0px 0px 0px 15px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.border-edges-all {
+	border-radius: 15px 15px 15px 15px;
+}
+.blueTerms {
+	color: blue;
+    display: inline;
+}
+.brandBar {
+  height: 60px;
+  color: rgb(252,252,252);
+  display: block;
+  margin: 0 auto;
+}
+.brandBar-expedia {
+  background: rgb(251,200,1);
+}
+.brandBar-hotelscom {
+  background: rgb(212,18,0);
+}
+.brandBar-travelocity {
+  background: rgb(0,71,127);
+}
+.cancellationInfo {
+  border-radius: 0px 0px 0px 15px;
+}
+.cancellationInfo-expedia {
+  color: rgb(0,47,90);
+}
+.cancellationInfo-hotelscom {
+  color: rgb(152,0,109);
+}
+.cancellationInfo-travelocity {
+  color: rgb(0,71,127);
+}
+.chargeInfoAndButtonSection {
+	padding: 10px;
+	height: 40px;
+    background: black;
+    color: rgb(247,247,247);
+}
+.checkInOutLabels {
+	text-align: left;
+    float: left;
+    width: 27%;
+    margin-right: 5px;
+    padding-left: 25px;
+}
+.checkInOutData {
+	margin-left: 5px;
+	text-align: left;
+    float: left;
+    width: 45%;
+}
+.container {
+	padding: 5px;
+}
+.grey-text {
+	color: rgb(89,89,89);
+}
+.module-section {
+	background: rgb(247,247,247);
+    padding: 2.5%;
+    height: auto;
+}
+.payNowInfoSection {
+	padding: 4px;
+	float: left;
+    margin-right: 10px;
+}
+.propertyInfo {
+    border-radius: 15px 15px 0px 0px;
+    margin-top: 10px;
+}
+.travelDatesAndTripTotalSection {
+	width: 100%;
+    margin-bottom: 80px;
+}
+.travelDateSection {
+    width: 60%;
+    float: left;
+    height: 40px;
+}
+.travelerInfoSection {
+	clear: both;
+}
+.termsAndConditions {
+	margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right: 10px;
+}
+.totalPrice {
+	font-size: medium;
+}
+.tripTotalSection {
+    width: 29%;
+    float: left;
+    margin-left: 1%;
+    text-align: center;
+    height: 40px;
+}
+.submitButton {
+	float: left;
+}
+.confirmationNum {
+	font-size: medium;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.thankYou {
+	text-align: center;
+    font-size: large;
+    margin-top: 15px;
+}
+.travelerPlaceHolder {
+	display: inline;
+}
+.textConfirm {
+	margin-top: 10px;
+    width: 90%;
+    margin-left: 5px;
+}
