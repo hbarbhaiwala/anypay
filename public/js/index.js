@@ -44,15 +44,42 @@ function getTokenId() {
 	return document.getElementById('tokenId').value;
 }
 
+function getTotalPrice() {
+	console.log(`getTotalPrice was called successfully...`);
+	return document.getElementById('totalPrice').value;
+}
+
+function getBrandName() {
+	console.log(`getBrandName was called successfully...`);
+	var brandName;
+	switch(document.getElementById('brandName').value) {
+    case "expedia":
+        brandName = "EXPEDIA";
+        break;
+    case "hotelscom":
+        brandName = "HOTELS.COM";
+        break;
+    case "travelocity":
+        brandName = "TRAVELOCITY";
+        break;
+    default:
+        text = "I have never heard of that brand...";
+				break;
+		}
+		return brandName;
+}
+
 /**
 * Apple Pay Logic
 * Our entry point for Apple Pay interactions.
 * Triggered when the Apple Pay button is pressed
 */
 function applePayButtonClicked(tokenId) {
+	var totalPrice = getTotalPrice();
+
 	const paymentRequest = {
 		countryCode: 'US',
-		currencyCode: 'USD',		// data
+		currencyCode: 'USD',			// data
 		// shippingMethods: [
 		// 	{
 		// 		label: 'Free Shipping',
@@ -64,17 +91,17 @@ function applePayButtonClicked(tokenId) {
 		lineItems: [
 			{
 				label: 'SUB-TOTAL',
-				amount: '248.60',			// data
+				amount: totalPrice
 			},
 			{
 				label: 'TAXES & FEES',
-				amount: '0.00',			// data
+				amount: '0.00',					// data
 			}
 		],
 
 		total: {
-			label: 'Expedia', 	// data
-			amount: '248.60',			// data
+			label: getBrandName,
+			amount: totalPrice
 		},
 
 		supportedNetworks:[ 'amex', 'discover', 'masterCard', 'visa'],

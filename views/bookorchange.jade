@@ -9,6 +9,8 @@ html
     script(src='./js/support.js')
   body
     input(type="hidden" id="tokenId" value="#{tokenId}")
+    input(type="hidden" id="brandName" value="#{brandName}")
+    input(type="hidden" id="totalPrice" value="#{totalPrice}")
     .container
       .brandBar(class="brandBar-#{brandName}")
         img(class="top-logo-#{brandName}")
@@ -62,7 +64,7 @@ html
           .totalPrice(style='font-size: 1.9em;') #{totalPrice}
         |         
         .submitButton
-          .apple-pay-button-with-text.apple-pay-button-white-with-text(onclick='applePayButtonClicked(getTokenId())')
+          .apple-pay-button-with-text.apple-pay-button-white-with-text(onclick='applePayButtonClicked(getTokenId(), )')
             span.text Buy with
               |   
               span.logo
