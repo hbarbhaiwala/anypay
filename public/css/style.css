@@ -104,11 +104,11 @@ body {
     color: rgb(247,247,247);
 }
 .checkInOutLabels {
-	text-align: left;
-    float: left;
-    width: 35%;
-    margin-right: 5px;
-    padding-left: 15px;
+  text-align: left;
+  float: left;
+  width: 40%;
+  margin-right: 5px;
+  padding-left: 10px;
 }
 .checkInOutData {
 	margin-left: 5px;
