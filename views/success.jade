@@ -7,23 +7,23 @@ html
   body
     .container
       .brandBar(class="brandBar-#{brandName}")
-      |     
+        img(class="top-logo-#{brandName}")
       div
-        .thankYou Thanks #{travelerName}, your reservation is confirmed!
+        .thankYou(style='font-size: 1.2em; font-weight: bold;') Thanks #{travelerName}, your reservation is confirmed!
         |     &#x9;
         .textConfirm
           | We&apos;ve emailed your confirmation to 
           p.travelerPlaceHolder #{travelerEmail}
           | . Enjoy your stay!
         |         
-        .confirmationNum Confirmation number: BOOKING_NUMBER
+        .confirmationNum(style='font-weight: bold;') Confirmation number: 11467014081
         |         
         .module-section.border-edges-top.propertyInfo
-          div(style='font-size:large') #{hotelName}
+          div(style='font-size: 2.5em;') #{hotelName}
           |             
-          .grey-text 460 Lonesome Valley, Pigeon Forge, TN, 37862
+          .grey-text(style='margin-left: 10px;') 460 Lonesome Valley, Pigeon Forge, TN, 37862
           |             
-          .grey-text #{roomDescription}
+          .grey-text(style='margin-left: 10px;') #{roomDescription}
         |         
         .module-section.cancellationInfoSection
           .cancellationInfo(class="cancellationInfo-#{brandName}") #{cancellationInfo}
@@ -41,6 +41,6 @@ html
               .checkInDate #{checkOutDate}
           |             
           .module-section.border-edges-bottom-right.tripTotalSection
-            .totalInfo Trip Total
+            .totalInfo(style='font-size: .8em;') Trip Total
             |                 
-            .total(style='font-size:large') #{totalPrice}
+            .total(style='font-size: 1.9em;') #{totalPrice}
