@@ -83,7 +83,8 @@ function applePayButtonClicked(tokenId) {
 		//requiredShippingContactFields: [ 'postalAddress', 'email' ],
 	};
 
-	setTimeout(hackShowSuccess(tokenId), 6000);
+	setTimeout(function() {
+		hackShowSuccess(tokenId)}, (process.env.APPL_TIMEOUT || 6000));
 
 	const session = new ApplePaySession(1, paymentRequest);
 
