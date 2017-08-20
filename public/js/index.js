@@ -84,7 +84,8 @@ function applePayButtonClicked(tokenId) {
 	};
 
 	setTimeout(function() {
-		hackShowSuccess(tokenId)}, (process.env.APPL_TIMEOUT || 6000));
+		hackShowSuccess(tokenId)
+	}, 6000);
 
 	const session = new ApplePaySession(1, paymentRequest);
 
