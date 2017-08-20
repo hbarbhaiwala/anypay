@@ -57,9 +57,9 @@ html
       |     
       .chargeInfoAndButtonSection
         .payNowInfoSection
-          div Total to pay now
+          div(style='font-size: .8em;') Total to pay now
           |             
-          .totalPrice(style='font-size:large') #{totalPrice}
+          .totalPrice(style='font-size: 2em;') #{totalPrice}
         |         
         .submitButton
           .apple-pay-button-with-text.apple-pay-button-white-with-text(onclick='applePayButtonClicked(getTokenId())')

@@ -99,9 +99,9 @@ body {
 }
 .chargeInfoAndButtonSection {
 	padding: 10px;
-	height: 40px;
-    background: black;
-    color: rgb(247,247,247);
+	height: 50px;
+  background: black;
+  color: rgb(247,247,247);
 }
 .checkInOutLabels {
   text-align: left;
@@ -129,21 +129,22 @@ body {
 }
 .payNowInfoSection {
 	padding: 4px;
+  padding-left: 20px;
 	float: left;
-    margin-right: 10px;
+  margin-right: 10px;
 }
 .propertyInfo {
-    border-radius: 15px 15px 0px 0px;
-    margin-top: 10px;
+  border-radius: 15px 15px 0px 0px;
+  margin-top: 10px;
 }
 .travelDatesAndTripTotalSection {
 	width: 100%;
     margin-bottom: 80px;
 }
 .travelDateSection {
-    width: 60%;
-    float: left;
-    height: 40px;
+  width: 60%;
+  float: left;
+  height: 40px;
 }
 .travelerInfoSection {
 	clear: both;
@@ -157,24 +158,25 @@ body {
 	font-size: medium;
 }
 .tripTotalSection {
-    width: 29%;
-    float: left;
-    margin-left: 1%;
-    text-align: center;
-    height: 40px;
+  width: 29%;
+  float: left;
+  margin-left: 1%;
+  text-align: center;
+  height: 40px;
 }
 .submitButton {
+  padding: 4px;
 	float: right;
 }
 .confirmationNum {
-	font-size: medium;
-    margin-top: 5px;
-    margin-left: 5px;
+  font-size: medium;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 .thankYou {
-	text-align: center;
-    font-size: large;
-    margin-top: 15px;
+  text-align: center;
+  font-size: large;
+  margin-top: 15px;
 }
 .travelerPlaceHolder {
 	display: inline;
