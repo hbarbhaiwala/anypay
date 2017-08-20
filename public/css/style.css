@@ -86,15 +86,16 @@ body {
 }
 .cancellationInfo {
   border-radius: 0px 0px 0px 15px;
+  font-weight: bold;
 }
 .cancellationInfo-expedia {
-  color: rgb(0,47,90);
+  color: rgb(0,0,140);
 }
 .cancellationInfo-hotelscom {
   color: rgb(152,0,109);
 }
 .cancellationInfo-travelocity {
-  color: rgb(0,71,127);
+  color: rgb(0,0,205);
 }
 .chargeInfoAndButtonSection {
 	padding: 10px;
