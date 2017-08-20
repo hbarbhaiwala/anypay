@@ -11,7 +11,7 @@ html
     input(type="hidden" id="tokenId" value="#{tokenId}")
     .container
       .brandBar(class="brandBar-#{brandName}")
-      |     
+        img(class="top-logo-#{brandName}")
       div
         .module-section.border-edges-top.propertyInfo
           div(style='font-size:large') #{hotelName}
@@ -39,9 +39,9 @@ html
             .total(style='font-size:large') #{totalPrice}
         |         
         |         
-        .module-section.border-edges-all.travelerInfoSection
+        .module-section.border-edges-all.travelerInfoSection()
           .brandIcon
-          |             
+            img(class="middle-logo-#{brandName}" alt='#{brandName}')
           .travelerInfo
             .travelerName(style='font-size:large') #{travelerName}
             |               

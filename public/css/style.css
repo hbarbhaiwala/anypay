@@ -36,6 +36,39 @@ body {
 .brandBar-expedia {
   background: rgb(251,200,1);
 }
+.top-logo-expedia {
+	content:url("./../images/expedia-logo.png");
+	display: block;
+	margin-left: auto;
+	margin-right:auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+.top-logo-hotelscom {
+	content:url("./../images/hotelscom-logo.png");
+	display: block;
+	margin-left: auto;
+	margin-right:auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+.top-logo-travelocity {
+	content:url("./../images/travelocity-logo.png");
+	display: block;
+	margin-left: auto;
+	margin-right:auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+.middle-logo-expedia {
+	content:url("./../images/middle-expedia-logo.png");
+}
+.middle-logo-hotelscom {
+	content:url("./../images/middle-hotelscom-logo.png");
+}
+.middle-logo-travelocity {
+	content:url("./../images/middle-travelocity-logo.png");
+}
 .brandBar-hotelscom {
   background: rgb(212,18,0);
 }
@@ -138,8 +171,12 @@ body {
 }
 .textConfirm {
 	margin-top: 10px;
-    width: 90%;
-    margin-left: 5px;
+	width: 90%;
+	margin-left: 5px;
+}
+.brandIcon {
+	float: left;
+	padding-right: 20px;
 }
 
 /**
