@@ -100,7 +100,7 @@ function applePayButtonClicked(tokenId) {
 		],
 
 		total: {
-			label: getBrandName,
+			label: getBrandName(),
 			amount: totalPrice
 		},
 
