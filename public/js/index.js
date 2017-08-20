@@ -64,7 +64,7 @@ function applePayButtonClicked(tokenId) {
 		lineItems: [
 			{
 				label: 'SUB-TOTAL',
-				amount: '0.00',			// data
+				amount: '248.60',			// data
 			},
 			{
 				label: 'TAXES & FEES',
@@ -74,7 +74,7 @@ function applePayButtonClicked(tokenId) {
 
 		total: {
 			label: 'Expedia', 	// data
-			amount: '8.99',			// data
+			amount: '248.60',			// data
 		},
 
 		supportedNetworks:[ 'amex', 'discover', 'masterCard', 'visa'],
