@@ -150,9 +150,10 @@ body {
 	clear: both;
 }
 .termsAndConditions {
-	margin-top: 20px;
-    margin-bottom: 20px;
-    padding-right: 10px;
+  font-size: .7em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-right: 10px;
 }
 .totalPrice {
 	font-size: medium;
