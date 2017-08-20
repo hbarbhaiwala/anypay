@@ -46,7 +46,7 @@ function getTokenId() {
 
 function getTotalPrice() {
 	console.log(`getTotalPrice was called successfully...`);
-	return document.getElementById('totalPrice').value;
+	return document.getElementById('totalPrice').value.substring(1);	// remove the $ sign
 }
 
 function getBrandName() {
