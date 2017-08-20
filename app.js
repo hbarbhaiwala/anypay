@@ -33,15 +33,10 @@ app.get('/charge', function (req, res) {
       queryParams = querystring.parse(req.url.replace(/^.*\?/, ''));
     }
 
-    var title = 'Home';
-    if(queryParams!=undefined && queryParams.title!=undefined) {
-      title = queryParams.title
-    }
-
-    res.render('charge', {
-      title : title,
-      year : '2017'
-    })
+    var query = { _id: ObjectId(queryParams.id) };
+    mongoHelper.find(query, res, function(result, res) {
+      res.render('charge', result);
+    });
 });
 
 /**

@@ -1,13 +1,65 @@
-extend layout
-block content
-  p
-    | Vivamus hendrerit arcu sed erat molestie
-    | vehicula. Sed auctor neque eu tellus
-    | rhoncus ut eleifend nibh porttitor. Ut in.
-  p
-    | Donec congue lacinia dui, a porttitor
-    | lectus condimentum laoreet. Nunc eu
-    | ullamcorper orci. Quisque eget odio ac
-    | lectus vestibulum faucibus eget in metus.
-    | In pellentesque faucibus vestibulum. Nulla
-    | at nulla justo, eget luctus tortor.
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1', shrink-to-fit='no')
+    link(rel='stylesheet', href='./css/style.css')
+    link(rel='stylesheet', href='./css/buywithapplepay.css')
+    script(src='./js/index.js')
+    script(src='./js/support.js')
+  body
+    input(type="hidden" id="tokenId" value="#{tokenId}")
+    input(type="hidden" id="brandName" value="#{brandName}")
+    input(type="hidden" id="totalPrice" value="#{totalPrice}")
+    .container
+      .brandBar(class="brandBar-#{brandName}")
+        img(class="top-logo-#{brandName}")
+      div
+        .module-section.border-edges-top.propertyInfo
+          div(style='font-size: 1.4em;') Secure Payment
+        |         
+        .module-section.divColumns
+          .firstColumn.grey-text Merchant
+          |             
+          .secondColumn(style='') #{brandName}
+        |         
+        div(style='margin-top:1%; margin-bottom:1%;')
+          .module-section
+            .divColumns
+              .firstColumn.grey-text(style='') Date
+              |                     
+              .secondColumn.checkInDate(style='') #{checkInDate}
+        |         
+        .module-section.divColumns
+          .firstColumn.grey-text Amount
+          |             
+          .secondColumn(style='') #{totalPrice}
+        |         
+        |         
+        .module-section.border-edges-bottom(style='margin-top:1%; margin-bottom:3%;')
+          .brandIcon
+            img(class="middle-logo-#{brandName}" alt='#{brandName}')
+          .travelerInfo
+            .travelerName(style='font-size: 1.15em; font-weight: bold;') #{travelerName}
+            |               
+            .phoneNumber(style='font-size: 1.15em;') #{travelerPhone}
+            |               
+            .email(style='font-size: 1.15em;') #{travelerEmail}
+        |         
+        .termsAndConditions.grey-text
+          | By completing this booking I agree that I have read and accept the
+          p.blueTerms Terms and Conditions
+          |  and 
+          p.blueTerms Privacy Policy.
+      |     
+      .chargeInfoAndButtonSection
+        .payNowInfoSection
+          div(style='font-size: .8em;') Total to pay now
+          |             
+          .totalPrice(style='font-size: 1.9em;') #{totalPrice}
+        |         
+        .submitButton
+          .apple-pay-button-with-text.apple-pay-button-white-with-text(onclick='applePayButtonClicked(getTokenId(), )')
+            span.text Buy with
+              |   
+              span.logo
