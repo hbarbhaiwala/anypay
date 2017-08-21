@@ -35,6 +35,7 @@ app.get('/charge', function (req, res) {
 
     var query = { _id: ObjectId(queryParams.id) };
     mongoHelper.find(query, res, function(result, res) {
+      result.tokenId = result._id;
       res.render('charge', result);
     });
 });
@@ -52,7 +53,6 @@ app.get('/success', function (req, res) {
 
     var query = { _id: ObjectId(queryParams.id) };
     mongoHelper.find(query, res, function(result, res) {
-      result.tokenId = result._id;
       res.render('success', result);
     });
 });
